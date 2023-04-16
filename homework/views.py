@@ -8,3 +8,8 @@ def homeworkk (request):
 
 def homepage(request):
     return HttpResponse('Добро пожаловать в приложение ToDo - Admin')
+
+ 
+def check(request):
+    return HttpResponse('Проверка')
+   
