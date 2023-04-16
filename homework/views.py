@@ -4,7 +4,7 @@ from django.shortcuts import render,HttpResponse
 
 
 def homeworkk (request):
-    return render(request,"homeworkk.html")
+    return render(request,"index.html")
 
 def homepage(request):
     return HttpResponse('Добро пожаловать в приложение ToDo - Admin')
