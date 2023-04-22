@@ -6,6 +6,7 @@ admin.site.register(ToDo)
 
 
 
+<<<<<<< HEAD
 # from .models import ToMeet
 
 # class ToMeetAdmin(admin.ModelAdmin):
@@ -14,10 +15,21 @@ admin.site.register(ToDo)
 #     search_fields = ('person', 'phone_number')
 
 # admin.site.register(ToMeet, ToMeetAdmin)
+=======
+from .models import ToMeet
+
+class ToMeetAdmin(admin.ModelAdmin):
+    list_display = ('person', 'phone_number', 'date_of_meeting', 'is_closed', 'is_favorite')
+    list_filter = ('is_closed', 'is_favorite')
+    search_fields = ('person', 'phone_number')
+
+admin.site.register(ToMeet, ToMeetAdmin)
+>>>>>>> d83d0d5d06844dd02630759cd8779c73e3d7ecaa
 
 
 
 
+<<<<<<< HEAD
 # from django import models
 
 # class Person(models,):
@@ -26,6 +38,16 @@ admin.site.register(ToDo)
     
 
 # admin.site.register( Person,)
+=======
+from django import models
+
+class Person(models,):
+    name=models.CharField(max_length=20)
+    age=models.IntegerField()
+    
+
+admin.site.register( Person,)
+>>>>>>> d83d0d5d06844dd02630759cd8779c73e3d7ecaa
 
 
 # Задание № 3
