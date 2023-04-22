@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from homework.views import homepage,homeworkk,homepage,check
+from homework.views import homepage,homeworkk,homepage,check,test
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,5 +27,5 @@ urlpatterns = [
    
     path ("homeworkk",homeworkk,name="homeworkk"),
     path("", homepage, name="home"),
-    path("check",check)
+    path("test",test, name="test")
 ]   +static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
