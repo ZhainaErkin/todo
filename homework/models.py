@@ -10,7 +10,7 @@ class ToDo(models.Model):
 
   
 
-<<<<<<< HEAD
+
 # class ToMeet(models.Model):
 #     person = models.CharField(max_length=255)
 #     phone_number = models.CharField(max_length=20)
@@ -18,13 +18,12 @@ class ToDo(models.Model):
 #     comment = models.TextField(blank=True)
 #     is_closed = models.BooleanField(default=False)
 #     is_favorite = models.BooleanField(default=False)
-=======
-class ToMeet(models.Model):
-    person = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=20)
-    date_of_meeting = models.DateField()
-    comment = models.TextField(blank=True)
-    is_closed = models.BooleanField(default=False)
-    is_favorite = models.BooleanField(default=False)
->>>>>>> d83d0d5d06844dd02630759cd8779c73e3d7ecaa
+
+# class ToMeet(models.Model):
+#     person = models.CharField(max_length=255)
+#     phone_number = models.CharField(max_length=20)
+#     date_of_meeting = models.DateField()
+#     comment = models.TextField(blank=True)
+#     is_closed = models.BooleanField(default=False)
+#     is_favorite = models.BooleanField(default=False)
 
