@@ -9,19 +9,30 @@
   <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
   <link rel="stylesheet" href="{% static 'styles/checkbox.css'  %}">
-    <title>Урок 32</title>
+    <title>Урок 34</title>
    
 </head>
 <body>
 <section>
      <div class="create_container">
-         <input type="text" class="create_input" placeholder="Новая задача">
+        <form action="{% url 'add-todo' %}" method="POST">
+            {% csrf_token %}
+         <input type="text" 
+         class="create_input" 
+         placeholder="Новая задача" 
+         name="todo_text"
+         />
          <button class="create_button">Добавить</button>
+        </form>
      </div>
 
      <div class="todo_container">
         {% for todo in todo_list%} 
-         <div class="todo_item">
+         <div class="todo_item 
+              {% if todo.is_favorite %}
+                  marked
+              {% endif %}
+            "> 
             <div class="todo_item_header">
                  <label class="checkbox_container">
                      <input type="checkbox">
@@ -35,9 +46,18 @@
              <div class="todo_item_footer">
              <p>{{todo.date}}  </p>
              <div class="action_buttons">
-                 <img  src="{% static './icons/unmarked.png' %}" />
-                 <img  src="{% static './icons/delete.png' %}" />
-                 
+                {% if todo.is_favorite %}
+                <a href="{% url 'unmark-todo' todo.id %} ">
+                 <img  src="{% static './icons/marked2.png' %}" />
+                </a>
+                {% else%}
+                <a href="{% url 'mark-todo' todo.id %} ">
+                    <img  src="{% static './icons/unmarked.png' %}" />
+                   </a>
+                {% endif%}
+                 <a href="{% url 'delete-todo' todo.id %} ">
+                     <img  class="delete" src="{% static './icons/delete.png' %}" />
+                 </a>
              </div>
          </div>
      </div> 
