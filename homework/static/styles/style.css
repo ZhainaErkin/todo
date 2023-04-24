@@ -89,7 +89,8 @@ section{
 
 .todo_item_header h4{
     text-decoration: none;
-}    
+} 
+   
 .todo_item_footer{
     display: flex;
     justify-content: space-between;

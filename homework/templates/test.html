@@ -41,11 +41,11 @@
                      {% if todo.is_closed %}
                         checked
                      {% endif%}
-                     >
+                     />
                      <span class="checkboxmark"></span>
                  </label> 
                  
-                 <h4><a href="{% url 'close-todo' todo.id%}">  {{ todo.text}} </a>  </h4>
+                 <h4><a href="{% url 'close-todo' todo.id %}">  {{ todo.text}} </a>  </h4>
            
              </div>
 
