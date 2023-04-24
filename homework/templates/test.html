@@ -31,15 +31,21 @@
          <div class="todo_item 
               {% if todo.is_favorite %}
                   marked
+              {% elif todo.is_closed %} 
+                  done   
               {% endif %}
             "> 
             <div class="todo_item_header">
                  <label class="checkbox_container">
-                     <input type="checkbox">
+                     <input type="checkbox"
+                     {% if todo.is_closed %}
+                        checked
+                     {% endif%}
+                     >
                      <span class="checkboxmark"></span>
                  </label> 
                  
-                 <h4> {{ todo.text}}  </h4>
+                 <h4><a href="{% url 'close-todo' todo.id%}">  {{ todo.text}} </a>  </h4>
            
              </div>
 
